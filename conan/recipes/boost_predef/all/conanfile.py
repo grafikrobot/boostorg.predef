@@ -12,6 +12,9 @@ class Pkg(ConanFile):
 
     tool_requires = "b2/[>=5.3.3.1]"
 
+    def package_id(self):
+        self.info.clear()
+
     def export(self):
         git = Git(self, self.recipe_folder)
         git.coordinates_to_conandata()

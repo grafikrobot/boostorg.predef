@@ -7,6 +7,7 @@
   "maintainers": ["René Ferdinand Rivera Morell <grafikrobot -at- gmail.com>"],
   "cxxstd": "98",
   "conan": {
-    "topics": ["preprocessor", "miscellaneous"]
+    "topics": ["preprocessor", "miscellaneous"],
+    "package_id": "header-only"
   }
 }
