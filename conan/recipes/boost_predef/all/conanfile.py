@@ -10,7 +10,7 @@ class Pkg(ConanFile):
     license = "BSL-1.0"
     url = "https://github.com/boostorg/predef"
 
-    tool_requires = "b2/>=5.3.3.1"
+    tool_requires = "b2/[>=5.3.3.1]"
 
     def export(self):
         git = Git(self, self.recipe_folder)
