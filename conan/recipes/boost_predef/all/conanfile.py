@@ -32,7 +32,8 @@ class Pkg(ConanFile):
             self.info.clear()
 
     def layout(self):
-        self.b2.layout(header_only=self._header_only)
+        # self.b2.layout(header_only=self._header_only)
+        pass
 
     def generate(self):
         self.b2.generate(header_only=self._header_only)
