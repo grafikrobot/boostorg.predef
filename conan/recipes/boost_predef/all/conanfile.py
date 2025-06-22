@@ -32,10 +32,10 @@ class Pkg(ConanFile):
             self.info.clear()
 
     def layout(self):
-        b2.layout(header_only=self._header_only)
+        self.b2.layout(header_only=self._header_only)
 
     def generate(self):
-        b2.generate(header_only=self._header_only)
+        self.b2.generate(header_only=self._header_only)
 
     def export(self):
         git = Git(self, self.recipe_folder)
@@ -46,7 +46,7 @@ class Pkg(ConanFile):
         git.checkout_from_conandata_coordinates()
 
     def package(self):
-        b2.install(target=["install"])
+        self.b2.install(target=["install"])
 
     def package_info(self):
         if self._header_only:
