@@ -23,7 +23,7 @@ class Pkg(ConanFile):
 
     @property
     def b2(self):
-        if not hasattr(self, "_b2") and not self._b2:
+        if not hasattr(self, "_b2") or not self._b2:
             self._b2 = self.python_requires["b2"].B2(self)
         return self._b2
 
