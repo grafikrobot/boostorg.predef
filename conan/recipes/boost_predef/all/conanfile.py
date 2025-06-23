@@ -44,7 +44,11 @@ class Pkg(ConanFile):
 
     def source(self):
         git = Git(self, self.recipe_folder)
-        git.checkout_from_conandata_coordinates()
+        # git.checkout_from_conandata_coordinates()
+        scm = self.conan_data["scm"]
+        git.clone(url=scm["url"], target="src", args=["--origin=origin"])
+        git.run(f"fetch origin {scm['commit']}")
+        git.checkout(commit=scm["commit"])
 
     # def package(self):
     #     self.b2.install(target=["install"])
